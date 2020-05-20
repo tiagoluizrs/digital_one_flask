@@ -1,0 +1,29 @@
+{% extends admin_base_template %}
+{% block body %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-3 form-group">
+                <select id="state" class="changeSelect form-control" >
+                    <option value="0" selected>Selecione um estado</option>
+                    {% for state in states %}
+                        <option value="{{ state.id }}">{{ state.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-3 form-group">
+                <select id="disease" class="changeSelect form-control">
+                    <option value="0" selected>Selecione uma doença</option>
+                    {% for disease in diseases %}
+                        <option value="{{ disease.id }}">{{ disease.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <canvas id="myChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
